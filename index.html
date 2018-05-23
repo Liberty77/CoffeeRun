@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <style lang="">
+        .content {
+            margin: 10px auto;
+            width: 50%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
+    <section class="content">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffee">Coffee Order</label>
+                        <input id="coffeeOrder" class="form-control" name="coffee" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input id="emailInput" class="form-control" type="email" name="emailAddress" value="" placeholder="dr@who.com">
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="short">Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="Tall" checked>Tall
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="Grande">Grande
+                        </label>
+                    </div>
+                    <div calss="form-control">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select name="falvor" id="flavorShot" class="form-control">
+                            <option value="">--请选择--</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <input name="strength" id="strengthLevel" type="range" value="30">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
 </body>
+
 </html>
