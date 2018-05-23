@@ -1,6 +1,6 @@
 (function(window) {
 
-    var App = window.APP || {};
+    var App = window.App || {};
 
     function Truck(truckId, db) {
         this.truckId = truckId;
@@ -29,7 +29,7 @@
         }.bind(this));
     }
 
-    App.Truck = Truck();
+    App.Truck = Truck;
     window.App = App;
 
 })(window);
