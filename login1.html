@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理系统-登录</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="manager-login">
+        <header>
+            <div class="company-name-bg">
+                <p class="company-name">物联网管理平台</p>
+            </div>
+        </header>
+    </div>
+    <section role="login">
+        <div class="login-form-bg">
+            <div class="login-wall">
+                <div>
+                    <h3 class="form-head">账号登录</h3>
+                    <form class="login-form" action="" method="get">
+                        <div class="form-control">
+                            <!-- <i class="icon-user"></i> -->
+                            <input class="form-control-line" type="text" placeholder="请输入用户名" required />
+                        </div>
+                        <div class="form-control">
+                            <!-- <i class="icon-password"></i> -->
+                            <input class="form-control-line" type="text" placeholder="请输入用密码" required/>
+                        </div>
+                        <div class="form-control">
+                            <button id="login-btn" class="submit submit-btn">&nbsp;&nbsp;&nbsp;登&nbsp;&nbsp;录&nbsp;&nbsp;&nbsp;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section role="footer-banner">
+        <div class="footer-banner">
+            <div class="footer-banner-bg">
+                <ul>
+                    <li>
+                        <img class="intro-img" src="login_bg_01.png" alt="">
+                        <span class="intro">一体微化应用系统</span>
+                        <br>
+                         <span class="intro">Integrated micro application system</span>
+                    </li>
+                    <li>
+                        <img class="intro-img" src="login_bg_02.png" alt="">
+                        <span class="intro">丰富的平台应用模块</span>
+                            <br>
+                        <span class="intro">Rich platform application module</span>
+                    </li>
+                    <li>
+                        <img class="intro-img" src="login_bg_03.png" alt="">
+                        <span class="intro">独立化自主运营</span>
+                            <br>
+                        <span class="intro">Independent operation</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section role="footer">
+        <div class="footer">
+            <p>
+                专注行业应用 争创技术领先 @坤洋技术
+            </p>
+        </div>
+    </section>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#login-btn").click(function(event) {
+                event.preventDefault();
+                var data = $("#login-form").serializeArray();
+                console.log(data);
+            })
+
+        });
+        
+    </script>
+</body>
+
+</html>

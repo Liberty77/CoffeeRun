@@ -14,10 +14,13 @@
         }
     }
 
-    FormHandle.prototype.addSubmitHandler = function() {
+    FormHandle.prototype.addSubmitHandler = function(fn) {
         console.log('Setting submit handler for form');
         this.$formElement.on('submit', function(event) {
             event.preventDefault();
+            var data = $(this).serializeArray();
+            console.log(data);
+            fn(data)
         })
     }
 

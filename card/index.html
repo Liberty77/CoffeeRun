@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style lang="css">
+        body {
+            margin: 0 auto;
+        }
+
+        div.data_package_card {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        div.card_info {
+            margin-left: 10px;
+            float: left;
+        }
+
+        img.company-logo {
+            float: left;
+            height: 80px;
+            width: 80px;
+        }
+
+        div.slicer_line {
+            float: left;
+            height: 80px;
+            width: 2px;
+            background-color: rgb(232, 232, 232);
+        }
+
+        button.switch_card {
+            margin-top: 10px;
+            float: right;
+            width: 60px;
+            height: 40px;
+            border-radius: 8px;
+            margin-right: 20px;
+            background-color: #fff;
+            border: 2px solid peru;
+            color: peru;
+        }
+
+        div.data_package_size {
+            clear: both;
+        }
+
+        div.data_package_size hr {
+            width: 100%;
+            height: 3px;
+            border: none;
+            border-top: 3px solid rgb(232, 232, 232);
+        }
+
+         div.data_package_size h3 {
+             margin-left: 30px;
+             font-size: 12px;
+         }
+
+        .data_packag_bg {
+            width: 100%;
+            height: 4px;
+            background-color: #eee;
+        }
+
+
+        .data_package_circle {
+            position: relative;
+            box-sizing: border-box;
+            margin-top: 10px;
+            height: 160px;
+        }
+
+        .data_package_big {
+            width: 160px;
+            height: 160px;
+            border: 2px solid rgb(29, 175, 92);
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .data_package_small {
+            width: 140px;
+            height: 140px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            box-sizing: border-box;
+            background-color: rgb(1, 204, 52);
+            text-align: center;
+        }
+
+        h2,
+        h5 {
+            color: #fff;
+        }
+
+        .data_package_status {
+            margin-top: 20px;
+            padding-top: 10px;
+            text-align: center;
+            background-color: rgb(247, 247, 247);
+        }
+
+        hr {
+            width: 90%;
+            height: 3px;
+            border: none;
+            border-top: 3px solid rgb(232, 232, 232);
+        }
+
+        .data_package_hint p {
+            margin: 0 10%;
+            color: peru;
+        }
+
+        button.user_action_btn {
+            width: 90%;
+            padding: 20px;
+            color: #fff;
+            background-color: rgb(2, 119, 1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section role="data_package_card">
+        <div class="data_package_card">
+            <img class="company-logo" src="timg.jpeg" alt="">
+            <div class="slicer_line"></div>
+            <div class="card_info">
+                <span style="color: blue">MISSID: 1064727650466</span>
+                <br>
+                <br>
+                <span style="color: #999">ICCID: 89655625626262564652</span>
+                <br>
+            </div>
+
+            <div class="switch_card">
+                <button class="switch_card">
+                        切换
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section role="data_package">
+
+        <div class="data_package_size">
+            <hr>
+            <h3>流量套餐: 移动30M/月(全国通用流量)</h3>
+            <div class=data_packag_bg>
+            </div>
+        </div>
+    </section>
+    <section role="data_package_chart">
+        <div class="data_package_circle">
+            <div class="data_package_big"></div>
+            <div class="data_package_small">
+                <h5>本月剩余流量</h5>
+                <h2>24.823</h2>
+                <h5>已用流量: 5.177MB</h5>
+                <h5>短信使用 0 条</h5>
+            </div>
+        </div>
+    </section>
+
+    <section role="data_package_status">
+        <div class="data_package_status">
+            <div class="data_package_status1">
+                <span>卡片状态:
+                    <button>正常</button>
+                </span>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <span>活动状态:
+                    <button>开机</button>
+                </span>
+                <hr>
+            </div>
+
+            <br>
+            <div class="data_package_status2">
+                <span>已经使用: 4 月</span>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <span>剩余时间: 8 月</span>
+                <hr>
+            </div>
+
+            <div class="data_package_hint">
+                <p>
+                    温馨提示: 请提前一个月购买套餐进行续费,以保证设备正常运行。
+                </p>
+            </div>
+            <div class="data_package_username">
+                <h4 style="color: red; padding: 4px 0;">我的物联网卡</h4>
+            </div>
+
+            <div class="data_package_renew">
+                <button class="user_action_btn">充值续费</button>
+            </div>
+
+            <div class="data_package_sendmsg">
+                <button class="user_action_btn">发送短信</button>
+            </div>
+        </div>
+    </section>
+
+    <javascript>
+
+    </javascript>
+</body>
+
+</html>
