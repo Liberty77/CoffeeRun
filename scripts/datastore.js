@@ -9,7 +9,7 @@
 
     }
 
-    DataStore.prototype.add = function(key, val) {
+    DataStoregit.prototype.add = function(key, val) {
         this.data[key] = val;
     }
 
