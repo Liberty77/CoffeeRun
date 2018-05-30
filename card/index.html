@@ -11,22 +11,40 @@
     <style lang="css">
         body {
             margin: 0 auto;
+            width: 100%;
+            height: 100%;
         }
 
-        div.data_package_card {
+        div.data_package_header {
+            height: 80px;
             margin-left: 10px;
             margin-top: 10px;
         }
 
-        div.card_info {
-            margin-left: 10px;
-            float: left;
-        }
-
-        img.company-logo {
+        img.company_logo {
             float: left;
             height: 80px;
             width: 80px;
+        }
+
+        p.card_info {
+            float: left;
+            margin-left: 10px;
+        }
+
+        span.missid {
+            float: left;
+            font-size: 16px;
+            font-weight: 700;
+            color: #33a3f7;
+        }
+
+        span.iccid {
+            margin-top: 16px;
+            float: left;
+            font-size: 8px;
+            font-weight: 200;
+            color: #a6a6a6;
         }
 
         div.slicer_line {
@@ -37,37 +55,39 @@
         }
 
         button.switch_card {
-            margin-top: 10px;
-            float: right;
-            width: 60px;
-            height: 40px;
+            float: none;
+            padding: 10px 16px;
+            font-size: 13px;
+            margin-top: 20px;
+            margin-left: 24px;
             border-radius: 8px;
-            margin-right: 20px;
             background-color: #fff;
             border: 2px solid peru;
             color: peru;
         }
 
-        div.data_package_size {
+        div.data_package_total {
             clear: both;
         }
 
-        div.data_package_size hr {
+        p.data_package_month {
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        hr.header_line {
             width: 100%;
             height: 3px;
             border: none;
-            border-top: 3px solid rgb(232, 232, 232);
+            border-top: 1px solid rgb(232, 232, 232);
         }
 
-         div.data_package_size h3 {
-             margin-left: 30px;
-             font-size: 12px;
-         }
-
-        .data_packag_bg {
+        .data_packag_line {
             width: 100%;
-            height: 4px;
+            height: 2px;
             background-color: #eee;
+            box-shadow: 0 1px 8px #e1e1e1;
         }
 
 
@@ -75,27 +95,26 @@
             position: relative;
             box-sizing: border-box;
             margin-top: 10px;
-            height: 160px;
+            height: 240px;
         }
 
         .data_package_big {
-            width: 160px;
-            height: 160px;
+            width: 220px;
+            height: 220px;
             border: 2px solid rgb(29, 175, 92);
             border-radius: 50%;
             position: absolute;
             margin: auto;
-            left: 0;
-            top: 0;
+            left: 4px;
+            top: 4px;
             right: 0;
             bottom: 0;
             box-sizing: border-box;
         }
 
         .data_package_small {
-            width: 140px;
-            height: 140px;
-            border: 2px solid #fff;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             position: absolute;
             margin: auto;
@@ -103,14 +122,99 @@
             top: 0;
             right: 0;
             bottom: 0;
-            box-sizing: border-box;
-            background-color: rgb(1, 204, 52);
             text-align: center;
         }
 
-        h2,
-        h5 {
+        #container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-bottom: -700px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(2, 119, 1, .4) 100%);
+            opacity: 1;
+        }
+
+        #wave-one {
+            background-color: #01cc34;
+            width: 240px;
+            height: 240px;
+            border-radius: 110px;
+            position: absolute;
+            left: 50%;
+            margin-left: -130px;
+            top: -100px;
+            opacity: .45;
+            z-index: 10;
+        }
+
+        #wave-two {
+            background-color: #01cc34;
+            width: 240px;
+            height: 240px;
+            border-radius: 100px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            top: -100px;
+            opacity: .4;
+            z-index: 10;
+        }
+
+        #wave-three {
+            background-color: #01cc34;
+            width: 240px;
+            height: 240px;
+            border-radius: 110px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            top: -100px;
+            opacity: .25;
+            z-index: 10;
+        }
+
+        .wave {
+            transition: top 2s;
+            -moz-transition: top 2s;
+            -webkit-transition: top 2s;
+            -o-transition: top 2s;
+        }
+
+        .data_package_info {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            z-index: 100;
             color: #fff;
+        }
+
+        .data_package_info h4 {
+            padding-top: 40px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .data_package_info h2 span {
+            font-size: 8px;
+        }
+
+        .data_package_info p {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 200;
+        }
+
+        .data_package_info p:last-child {
+            padding-bottom: 50px;
+            margin-top: -4px;
         }
 
         .data_package_status {
@@ -120,7 +224,33 @@
             background-color: rgb(247, 247, 247);
         }
 
-        hr {
+        button.card_status {
+            background-color: #4dc981;
+            border: none;
+            padding: 4px 6px;
+            color: #fff;
+        }
+
+        button.card_active {
+            background-color: transparent;
+            border: none;
+            padding: 4px 6px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #f4821f;
+        }
+
+        strong.card_used {
+            font-size: 16px;
+            color: #4dc981;
+        }
+
+        strong.card_surplus {
+            font-size: 16px;
+            color: #f4821f;
+        }
+
+        hr.status_line {
             width: 90%;
             height: 3px;
             border: none;
@@ -134,9 +264,12 @@
 
         button.user_action_btn {
             width: 90%;
-            padding: 20px;
+            padding: 16px;
             color: #fff;
-            background-color: rgb(2, 119, 1);
+            font-size: 18px;
+            font-weight: 200;
+            background-color: #01cc34;
+            border: none;
             border-radius: 8px;
             margin-bottom: 20px;
         }
@@ -144,32 +277,26 @@
 </head>
 
 <body>
-    <section role="data_package_card">
-        <div class="data_package_card">
-            <img class="company-logo" src="timg.jpeg" alt="">
+    <section role="data_package_header">
+        <div class="data_package_header">
+            <img class="company_logo" src="timg.jpeg" alt="">
             <div class="slicer_line"></div>
-            <div class="card_info">
-                <span style="color: blue">MISSID: 1064727650466</span>
+            <p class="card_info">
+                <span class="missid">MISSID: 1064727650466</span>
                 <br>
-                <br>
-                <span style="color: #999">ICCID: 89655625626262564652</span>
-                <br>
-            </div>
-
-            <div class="switch_card">
-                <button class="switch_card">
-                        切换
-                </button>
-            </div>
+                <span class="iccid">ICCID: 89655625626262564652</span>
+            </p>
+            <button class="switch_card">
+                切换
+            </button>
         </div>
     </section>
 
-    <section role="data_package">
-
-        <div class="data_package_size">
-            <hr>
-            <h3>流量套餐: 移动30M/月(全国通用流量)</h3>
-            <div class=data_packag_bg>
+    <section role="data_package_total">
+        <div class="data_package_total">
+            <hr class="header_line">
+            <p class="data_package_month">流量套餐: 移动30M/月(全国通用流量)</p>
+            <div class=data_packag_line>
             </div>
         </div>
     </section>
@@ -177,10 +304,19 @@
         <div class="data_package_circle">
             <div class="data_package_big"></div>
             <div class="data_package_small">
-                <h5>本月剩余流量</h5>
-                <h2>24.823</h2>
-                <h5>已用流量: 5.177MB</h5>
-                <h5>短信使用 0 条</h5>
+                <div id="container">
+                    <div id="wave-one" class="wave"></div>
+                    <div id="wave-two" class="wave"></div>
+                    <div id="wave-three" class="wave"></div>
+                </div>
+            </div>
+            <div class="data_package_info">
+                <h4>本月剩余流量</h4>
+                <h2>24.82
+                    <span>MB</span>
+                </h2>
+                <p>已用流量: 5.177MB</p>
+                <p>短信使用 0 条</p>
             </div>
         </div>
     </section>
@@ -189,21 +325,22 @@
         <div class="data_package_status">
             <div class="data_package_status1">
                 <span>卡片状态:
-                    <button>正常</button>
+                    <button class="card_status" disabled="disabled">正常</button>
                 </span>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <span>活动状态:
-                    <button>开机</button>
+                    <button class="card_active">开机</button>
                 </span>
-                <hr>
+                <hr class="status_line">
             </div>
 
-            <br>
             <div class="data_package_status2">
-                <span>已经使用: 4 月</span>
+                <span class="card_used">已经使用:&nbsp;
+                    <strong class="card_used">4</strong>&nbsp;月</span>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <span>剩余时间: 8 月</span>
-                <hr>
+                <span class="card_surplus">剩余时间:&nbsp;
+                    <strong class="card_surplus">8</strong>&nbsp;月</span>
+                <hr class="status_line">
             </div>
 
             <div class="data_package_hint">
@@ -212,22 +349,40 @@
                 </p>
             </div>
             <div class="data_package_username">
-                <h4 style="color: red; padding: 4px 0;">我的物联网卡</h4>
+                <p style="color: red; padding: 4px 0;">我的物联网卡</p>
             </div>
 
             <div class="data_package_renew">
-                <button class="user_action_btn">充值续费</button>
+                <button class="user_action_btn btn recharge">充值续费</button>
             </div>
-
             <div class="data_package_sendmsg">
-                <button class="user_action_btn">发送短信</button>
+                <button class="user_action_btn btn recharge">发送短信</button>
             </div>
         </div>
     </section>
 
-    <javascript>
+    <script src='http://www.5iweb.com.cn/statics/js/jquery.1.7.1.min.js'></script>
+    <script>
+        var waveOneinc = 0;
+        var waveTwoinc = 25;
+        var waveThreeinc = 35;
+        setInterval(function () {
+            $('#wave-one').css('transform', 'rotate(' + waveOneinc + 'deg)');
+            waveOneinc += 1.15;
+            waveTwoinc += 1.25;
+            waveThreeinc += 1.35;
+            $('#wave-two').css('transform', 'rotate(' + waveTwoinc + 'deg)');
+            $('#wave-three').css('transform', 'rotate(-' + waveThreeinc + 'deg)');
+        }, 20);
 
-    </javascript>
+
+        $(".switch_card").click(function () {
+            var test = -200 //40 - 240
+            $('#wave-one').css('top', test + 'px');
+            $('#wave-two').css('top', test + 'px');
+            $('#wave-three').css('top', test + 'px');
+        })
+    </script>
 </body>
 
 </html>
