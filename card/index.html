@@ -222,6 +222,8 @@
             padding-top: 10px;
             text-align: center;
             background-color: rgb(247, 247, 247);
+            min-height: 500px;
+            width: 100%;
         }
 
         button.card_status {
@@ -289,6 +291,8 @@
             <button class="switch_card">
                 切换
             </button>
+            totalSize <input type="text" id="totalSize">
+            userSize<input type="text" id="userSize">
         </div>
     </section>
 
@@ -377,7 +381,17 @@
 
 
         $(".switch_card").click(function () {
-            var test = -200 //40 - 240
+            var totalSize = parseFloat($("#totalSize").val());
+            var userSize = parseFloat($("#userSize").val());
+            var ratio = parseFloat((userSize/totalSize).toFixed(2));
+            var testRatio = 0;
+            if(ratio >= 1.00) {
+                testRatio = 2;      //加大比例系数
+            }else {
+                testRatio = ratio;  //不做处理
+            }
+            console.log(totalSize);
+            var test = -(40 + 200 * testRatio)// -240 //40 - 240 
             $('#wave-one').css('top', test + 'px');
             $('#wave-two').css('top', test + 'px');
             $('#wave-three').css('top', test + 'px');
