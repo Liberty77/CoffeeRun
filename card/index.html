@@ -9,10 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
     <style lang="css">
+
         body {
             margin: 0 auto;
-            width: 100%;
-            height: 100%;
         }
 
         div.data_package_header {
@@ -55,11 +54,11 @@
         }
 
         button.switch_card {
-            float: none;
+            float: right;
             padding: 10px 16px;
             font-size: 13px;
             margin-top: 20px;
-            margin-left: 24px;
+            margin-right: 24px;
             border-radius: 8px;
             background-color: #fff;
             border: 2px solid peru;
@@ -217,13 +216,16 @@
             margin-top: -4px;
         }
 
-        .data_package_status {
+        div.data_package_status {
             margin-top: 20px;
             padding-top: 10px;
             text-align: center;
             background-color: rgb(247, 247, 247);
-            min-height: 500px;
             width: 100%;
+            position: absolute; 
+            top: 400px; 
+            bottom: 0px;
+            left: 0px;
         }
 
         button.card_status {
@@ -291,8 +293,9 @@
             <button class="switch_card">
                 切换
             </button>
-            totalSize <input type="text" id="totalSize">
-            userSize<input type="text" id="userSize">
+            totalSize
+            <input type="text" id="totalSize"> userSize
+            <input type="text" id="userSize">
         </div>
     </section>
 
@@ -362,6 +365,8 @@
             <div class="data_package_sendmsg">
                 <button class="user_action_btn btn recharge">发送短信</button>
             </div>
+            <div class="fillPage">
+            </div>
         </div>
     </section>
 
@@ -379,19 +384,21 @@
             $('#wave-three').css('transform', 'rotate(-' + waveThreeinc + 'deg)');
         }, 20);
 
-
         $(".switch_card").click(function () {
             var totalSize = parseFloat($("#totalSize").val());
             var userSize = parseFloat($("#userSize").val());
-            var ratio = parseFloat((userSize/totalSize).toFixed(2));
+            var ratio = parseFloat((userSize / totalSize).toFixed(2));
+
             var testRatio = 0;
-            if(ratio >= 1.00) {
-                testRatio = 2;      //加大比例系数
-            }else {
-                testRatio = ratio;  //不做处理
+            if (ratio >= 1.00) {
+                testRatio = 2; //加大比例系数
+            } else if (ratio <= 0.1) {
+                testRatio = ratio + 0.02; //加大比例系数
+            } else {
+                testRatio = ratio - 0.07; //降低比例系数
             }
             console.log(totalSize);
-            var test = -(40 + 200 * testRatio)// -240 //40 - 240 
+            var test = -(40 + 200 * testRatio) // -240 //40 - 240 
             $('#wave-one').css('top', test + 'px');
             $('#wave-two').css('top', test + 'px');
             $('#wave-three').css('top', test + 'px');
