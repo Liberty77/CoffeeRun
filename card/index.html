@@ -4,98 +4,97 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>互联网卡信息</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
     <style lang="css">
-
         body {
             margin: 0 auto;
         }
-        
+
         div.data_package_header {
-            height: 80px;
+            height: 60px;
             margin-left: 10px;
             margin-top: 10px;
+            margin-bottom: 10px;
         }
-        
+
         img.company_logo {
             float: left;
-            height: 80px;
-            width: 80px;
+            height: 60px;
+            width: 60px;
         }
-        
-        p.card_info {
+
+        div.card_info {
             float: left;
             margin-left: 10px;
         }
-        
-        span.missid {
-            float: left;
-            font-size: 16px;
+
+        p.missid {
+            font-size: 12px;
             font-weight: 700;
             color: #33a3f7;
         }
-        
-        span.iccid {
+
+        p.iccid {
             margin-top: 16px;
-            float: left;
-            font-size: 8px;
+            font-size: 10px;
             font-weight: 200;
             color: #a6a6a6;
         }
-        
+
         div.slicer_line {
             float: left;
-            height: 80px;
+            height: 60px;
             width: 2px;
             background-color: rgb(232, 232, 232);
         }
-        
+
         button.switch_card {
             float: right;
-            padding: 10px 16px;
-            font-size: 13px;
-            margin-top: 20px;
+            padding: 8px;
+            font-size: 12px;
+            margin-top: 12px;
             margin-right: 24px;
-            border-radius: 8px;
+            border-radius: 6px;
             background-color: #fff;
             border: 2px solid peru;
             color: peru;
         }
-        
+
         div.data_package_total {
             clear: both;
         }
-        
+
         p.data_package_month {
-            margin-left: 30px;
+            margin-top: 1px;
+            margin-left: 20px;
             font-size: 16px;
             font-weight: 700;
         }
-        
+
         hr.header_line {
             width: 100%;
             height: 3px;
             border: none;
             border-top: 1px solid rgb(232, 232, 232);
         }
-        
+
         .data_packag_line {
             width: 100%;
             height: 2px;
             background-color: #eee;
             box-shadow: 0 1px 8px #e1e1e1;
         }
-        
+
         .data_package_circle {
             position: relative;
             box-sizing: border-box;
             margin-top: 10px;
             height: 240px;
         }
-        
+
         .data_package_big {
             width: 220px;
             height: 220px;
@@ -109,7 +108,7 @@
             bottom: 0;
             box-sizing: border-box;
         }
-        
+
         .data_package_small {
             width: 200px;
             height: 200px;
@@ -122,7 +121,7 @@
             bottom: 0;
             text-align: center;
         }
-        
+
         #container {
             width: 200px;
             height: 200px;
@@ -135,7 +134,7 @@
             background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(2, 119, 1, .4) 100%);
             opacity: 1;
         }
-        
+
         #wave-one {
             background-color: #01cc34;
             width: 240px;
@@ -148,7 +147,7 @@
             opacity: .45;
             z-index: 10;
         }
-        
+
         #wave-two {
             background-color: #01cc34;
             width: 240px;
@@ -161,7 +160,7 @@
             opacity: .4;
             z-index: 10;
         }
-        
+
         #wave-three {
             background-color: #01cc34;
             width: 240px;
@@ -174,14 +173,14 @@
             opacity: .25;
             z-index: 10;
         }
-        
+
         .wave {
             transition: top 2s;
             -moz-transition: top 2s;
             -webkit-transition: top 2s;
             -o-transition: top 2s;
         }
-        
+
         .data_package_info {
             position: absolute;
             margin: auto;
@@ -193,23 +192,23 @@
             z-index: 100;
             color: #fff;
         }
-        
+
         .data_package_info h4 {
             padding-top: 40px;
             font-size: 14px;
             font-weight: 400;
         }
-        
+
         .data_package_info h2 span {
             font-size: 8px;
         }
-        
+
         .data_package_info p {
             margin-top: 10px;
             font-size: 12px;
             font-weight: 200;
         }
-        
+
         .data_package_info p:last-child {
             padding-bottom: 50px;
             margin-top: -4px;
@@ -221,19 +220,15 @@
             text-align: center;
             background-color: rgb(247, 247, 247);
             width: 100%;
-            position: absolute; 
-            top: 400px; 
-            bottom: 0px;
-            left: 0px;
         }
-        
+
         button.card_status {
             background-color: #4dc981;
             border: none;
             padding: 4px 6px;
             color: #fff;
         }
-        
+
         button.card_active {
             background-color: transparent;
             border: none;
@@ -242,29 +237,29 @@
             font-weight: 600;
             color: #f4821f;
         }
-        
+
         strong.card_used {
             font-size: 16px;
             color: #4dc981;
         }
-        
+
         strong.card_surplus {
             font-size: 16px;
             color: #f4821f;
         }
-        
+
         hr.status_line {
             width: 90%;
             height: 3px;
             border: none;
             border-top: 3px solid rgb(232, 232, 232);
         }
-        
+
         .data_package_hint p {
             margin: 0 10%;
             color: peru;
         }
-        
+
         button.user_action_btn {
             width: 90%;
             padding: 16px;
@@ -284,17 +279,13 @@
         <div class="data_package_header">
             <img class="company_logo" src="timg.jpeg" alt="">
             <div class="slicer_line"></div>
-            <p class="card_info">
-                <span class="missid">MISSID: 1064727650466</span>
-                <br>
-                <span class="iccid">ICCID: 89655625626262564652</span>
-            </p>
+            <div class="card_info">
+                <p class="missid">MISSID: 1064727650466</p>
+                <p class="iccid">ICCID: 89655625626262564652</p>
+            </div>
             <button class="switch_card">
                 切换
             </button>
-            totalSize
-            <input type="text" id="totalSize"> userSize
-            <input type="text" id="userSize">
         </div>
     </section>
 
@@ -372,7 +363,7 @@
         var waveOneinc = 0;
         var waveTwoinc = 25;
         var waveThreeinc = 35;
-        setInterval(function() {
+        setInterval(function () {
             $('#wave-one').css('transform', 'rotate(' + waveOneinc + 'deg)');
             waveOneinc += 1.15;
             waveTwoinc += 1.25;
@@ -380,6 +371,7 @@
             $('#wave-two').css('transform', 'rotate(' + waveTwoinc + 'deg)');
             $('#wave-three').css('transform', 'rotate(-' + waveThreeinc + 'deg)');
         }, 20);
+
 
         $(".switch_card").click(function () {
             var totalSize = parseFloat($("#totalSize").val());

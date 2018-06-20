@@ -71,7 +71,6 @@ $.fn.optionsPlugin = function (options) {
         var beautify = new Beautifier(this, options);
         return beautifier.beautify();
     }
-
 })(jQuery, window, document)
 
 $.sayHello();
